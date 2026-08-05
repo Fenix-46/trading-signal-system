@@ -1,0 +1,34 @@
+{
+  "name": "trading-signal-system-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Electron desktop wrapper for the Trading Signal System",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build:backend": "python -m PyInstaller ../backend/trading_signal_system.spec",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.trading-signal-system.desktop",
+    "productName": "Trading Signal System",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "package.json",
+      "public/**"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  }
+}
